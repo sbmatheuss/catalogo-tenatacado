@@ -105,6 +105,14 @@ export const beers: Product[] = [
     price: 45,
     unit: '/cx',
   },
+  {
+    id: 14,
+    brand: 'Corona',
+    name: 'Corona Long',
+    volume: 'Long Neck — Caixa',
+    price: 156,
+    unit: '/cx',
+  },
 ];
 
 export const energyDrinks: Product[] = [

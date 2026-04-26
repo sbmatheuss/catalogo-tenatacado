@@ -18,7 +18,6 @@ function App() {
         title="Cervejas"
         subtitle="Catálogo"
         products={beers}
-        background="#F0EDE8"
         count="13 produtos"
       />
       <ProductsSection

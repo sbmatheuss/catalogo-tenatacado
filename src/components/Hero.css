@@ -15,8 +15,9 @@
   background-image: url('../assets/background-img.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   z-index: 0;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .hero-bg {
@@ -104,20 +105,21 @@
 }
 
 .hero-sub {
-  font-size: 1.1rem;
-  font-weight: 300;
-  color: var(--light-gray);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #e8e8e8;
   line-height: 1.6;
   max-width: 480px;
   margin-bottom: 44px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .btn-primary {
   display: inline-block;
-  background: var(--orange);
-  color: var(--black);
+  background: #b8952e;
+  color: #0a0a0a;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 800;
   font-size: 0.95rem;
@@ -125,31 +127,39 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 14px 36px;
+  border-radius: 4px;
+  border: 1px solid rgba(201,169,98,0.4);
   transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(201,169,98,0.2);
 }
 
 .btn-primary:hover {
-  background: var(--orange-light);
+  background: var(--orange);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,169,98,0.35);
 }
 
 .btn-secondary {
   display: inline-block;
-  border: 1.5px solid rgba(201,169,98,0.5);
-  color: var(--orange);
+  background: #b8952e;
+  color: #0a0a0a;
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.95rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   padding: 14px 36px;
+  border-radius: 4px;
+  border: 1px solid rgba(201,169,98,0.4);
   transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(201,169,98,0.2);
 }
 
 .btn-secondary:hover {
-  border-color: var(--orange);
-  background: rgba(201,169,98,0.1);
+  background: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,169,98,0.35);
 }
 
 .hero-stats {
@@ -172,17 +182,19 @@
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.2rem;
   font-weight: 900;
-  color: var(--orange);
+  color: #f0c94e;
   line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .stat-label {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #d0d0d0;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-top: 4px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 @media (max-width: 900px) {

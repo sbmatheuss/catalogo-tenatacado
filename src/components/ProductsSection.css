@@ -59,7 +59,12 @@ section {
   gap: 20px;
 }
 
-#cervejas { background: #F0EDE8; }
+#cervejas {
+  background-image: url('../assets/background-img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 @media (max-width: 900px) {
   section { padding: 70px 24px; }
