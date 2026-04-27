@@ -1,5 +1,4 @@
 import './Novidade.css';
-import prayaVideo from '../assets/prayaVideo.mp4';
 
 export function Novidade() {
   return (
@@ -18,16 +17,6 @@ export function Novidade() {
             <div className="novidade-price-tag">Novidade</div>
           </div>
           <a href="tel:+55" className="btn-primary">Consultar Preço</a>
-        </div>
-        <div className="novidade-video">
-          <video 
-            src={prayaVideo} 
-            controls 
-            autoPlay 
-            muted 
-            loop
-            playsInline
-          />
         </div>
       </div>
     </section>

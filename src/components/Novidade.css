@@ -5,51 +5,26 @@
   overflow: hidden;
 }
 
-#novidade::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/praya-back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: 0;
-  opacity: 0.6;
-}
-
 .novidade-bg {
   position: absolute;
   inset: 0;
-  background: rgba(10,10,10,0.7);
+  background: rgba(10,10,10,0.8);
   z-index: 1;
 }
 
 .novidade-inner {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   align-items: center;
   z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .novidade-content {
   position: relative;
-}
-
-.novidade-video {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.novidade-video video {
-  width: 100%;
-  max-width: 550px;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-  margin-left: -40px;
 }
 
 .novidade-badge {
