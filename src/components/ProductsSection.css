@@ -67,29 +67,15 @@ section {
   background-attachment: fixed;
 }
 
-#energeticos {
-  background-image: url('../assets/redbull2-back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: #1a1a1a !important;
+#energeticos,
+#refrigerantes {
+  background-color: var(--dark2) !important;
 }
 
 #energeticos .section-title,
 #energeticos .section-label,
 #energeticos .section-label::before,
-#energeticos .section-count {
-  color: #ffffff;
-}
-
-#refrigerantes {
-  background-image: url('../assets/guarana-back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: #1a1a1a !important;
-}
-
+#energeticos .section-count,
 #refrigerantes .section-title,
 #refrigerantes .section-label,
 #refrigerantes .section-label::before,
