@@ -3,6 +3,7 @@ import './Novidade.css';
 export function Novidade() {
   return (
     <section id="novidade">
+      <div id="novidade-bg-image"></div>
       <div className="novidade-bg"></div>
       <div className="novidade-inner">
         <div className="novidade-content">

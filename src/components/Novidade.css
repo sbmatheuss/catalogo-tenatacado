@@ -5,23 +5,20 @@
   overflow: hidden;
 }
 
-#novidade::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/praya-back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: 0;
-  opacity: 0.6;
-}
-
 .novidade-bg {
   position: absolute;
   inset: 0;
   background: rgba(10,10,10,0.7);
   z-index: 1;
+}
+
+#novidade-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/praya-back.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
 
 .novidade-inner {
