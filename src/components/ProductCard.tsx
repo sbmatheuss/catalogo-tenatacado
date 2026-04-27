@@ -30,7 +30,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="card-brand">{product.brand}</div>
       <div className="card-img">
         {product.name === 'Amstel Lata' && (
-          <img src={AmstelLata} alt="Amstel Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          <img src={AmstelLata} alt="Amstel Lata" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         )}
         {product.name === 'Heineken Lata' && (
           <img src={HeinekenLata} alt="Heineken Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
