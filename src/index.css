@@ -2,9 +2,9 @@
 @import './styles/animations.css';
 
 :root {
-  --gold: #00A650;
-  --gold-light: #2EB855;
-  --gold-dark: #008A3F;
+  --green: #00A650;
+  --green-light: #2EB855;
+  --green-dark: #008A3F;
   --gold: #C9A962;
   --gold-light: #D4BC7E;
   --gold-dark: #A88B4A;
@@ -17,7 +17,18 @@
   --white: #F0F0F0;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  -webkit-tap-highlight-color: transparent;
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
 
 html { scroll-behavior: smooth; }
 
