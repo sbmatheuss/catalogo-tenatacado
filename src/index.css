@@ -2,17 +2,19 @@
 @import './styles/animations.css';
 
 :root {
-  --orange: #C9A962;
-  --orange-light: #D4BC7E;
-  --orange-dark: #A88B4A;
-  --black: #1A1A1A;
-  --dark: #242424;
-  --dark2: #2A2A2A;
-  --dark3: #333333;
-  --gray: #777777;
-  --light-gray: #AAAAAA;
-  --white: #F8F6F3;
+  --gold: #00A650;
+  --gold-light: #2EB855;
+  --gold-dark: #008A3F;
   --gold: #C9A962;
+  --gold-light: #D4BC7E;
+  --gold-dark: #A88B4A;
+  --black: #0D0D0D;
+  --dark: #1A1A1A;
+  --dark2: #242424;
+  --dark3: #2E2E2E;
+  --gray: #888888;
+  --light-gray: #BBBBBB;
+  --white: #F0F0F0;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,12 +41,46 @@ body::before {
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0,166,80,0.3), transparent);
   margin: 0 60px;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px 28px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
 }
 
 @media (max-width: 900px) {

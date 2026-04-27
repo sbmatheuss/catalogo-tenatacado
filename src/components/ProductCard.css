@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--orange);
+  background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -40,13 +40,13 @@
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: #000000;
   margin-bottom: 12px;
 }
 
 .card-img {
-  width: 80px;
-  height: 120px;
+  width: 100px;
+  height: 140px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -91,14 +91,14 @@
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--orange);
+  color: var(--gold);
 }
 
 .card-price {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.65rem;
   font-weight: 900;
-  color: var(--orange);
+  color: var(--gold);
   line-height: 1;
 }
 

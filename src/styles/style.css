@@ -1,15 +1,15 @@
 :root {
-    --orange: #C9A962;
-    --orange-light: #D4BC7E;
-    --orange-dark: #A88B4A;
-    --black: #1A1A1A;
-    --dark: #242424;
-    --dark2: #2A2A2A;
-    --dark3: #333333;
-    --gray: #777777;
-    --light-gray: #AAAAAA;
-    --white: #F8F6F3;
+    --gold: #00A650;
+    --gold-light: #2EB855;
+    --gold-dark: #008A3F;
     --gold: #C9A962;
+    --black: #0D0D0D;
+    --dark: #1A1A1A;
+    --dark2: #242424;
+    --dark3: #2E2E2E;
+    --gray: #888888;
+    --light-gray: #BBBBBB;
+    --white: #F0F0F0;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,7 +50,7 @@
   /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--dark); }
-  ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
   /* ══════════════════════════════════════
      HEADER / NAV
@@ -61,7 +61,7 @@
     z-index: 100;
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,107,0,0.2);
+    border-bottom: 1px solid rgba(0,166,80,0.3);
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -78,7 +78,7 @@
     color: var(--white);
     line-height: 1;
   }
-  .logo span { color: var(--orange); }
+  .logo span { color: var(--gold); }
 
   nav { display: flex; gap: 32px; }
   nav a {
@@ -91,10 +91,10 @@
     color: var(--light-gray);
     transition: color 0.2s;
   }
-  nav a:hover { color: var(--orange); }
+  nav a:hover { color: var(--gold); }
 
   .nav-badge {
-    background: var(--orange);
+    background: var(--gold);
     color: var(--black);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
@@ -147,7 +147,7 @@
     font-size: 0.8rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--gold);
     margin-bottom: 24px;
   }
   .hero-tag::before {
@@ -155,7 +155,7 @@
     display: block;
     width: 32px;
     height: 2px;
-    background: var(--orange);
+    background: var(--gold);
   }
 
   .hero-title {
@@ -169,7 +169,7 @@
   }
   .hero-title em {
     font-style: normal;
-    color: var(--orange);
+    color: var(--gold);
     display: block;
   }
 
@@ -186,7 +186,7 @@
 
   .btn-primary {
     display: inline-block;
-    background: var(--orange);
+    background: var(--gold);
     color: var(--black);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
@@ -198,12 +198,12 @@
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     transition: all 0.2s;
   }
-  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
   .btn-secondary {
     display: inline-block;
     border: 1.5px solid rgba(255,107,0,0.5);
-    color: var(--orange);
+    color: var(--gold);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
@@ -214,7 +214,7 @@
     transition: all 0.2s;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   }
-  .btn-secondary:hover { border-color: var(--orange); background: rgba(255,107,0,0.1); }
+  .btn-secondary:hover { border-color: var(--gold); background: rgba(255,107,0,0.1); }
 
   .hero-visual {
     position: absolute;
@@ -277,7 +277,7 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
-    color: var(--orange);
+    color: var(--gold);
     line-height: 1;
   }
   .stat-label {
@@ -312,7 +312,7 @@
     font-size: 0.78rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--gold);
     margin-bottom: 12px;
   }
   .section-label::before {
@@ -320,7 +320,7 @@
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--orange);
+    background: var(--gold);
   }
 
   .section-title {
@@ -331,7 +331,7 @@
     line-height: 0.95;
     letter-spacing: -0.01em;
   }
-  .section-title span { color: var(--orange); }
+  .section-title span { color: var(--gold); }
 
   .section-count {
     font-family: 'Barlow Condensed', sans-serif;
@@ -382,7 +382,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--orange);
+    background: var(--gold);
     color: var(--black);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
@@ -404,7 +404,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 20px;
   }
-  .novidade-title span { color: var(--orange); }
+  .novidade-title span { color: var(--gold); }
 
   .novidade-desc {
     font-size: 1rem;
@@ -427,7 +427,7 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 3rem;
     font-weight: 900;
-    color: var(--orange);
+    color: var(--gold);
     line-height: 1;
   }
   .novidade-price small {
@@ -439,7 +439,7 @@
   .novidade-price-tag {
     background: rgba(255,107,0,0.12);
     border: 1px solid rgba(255,107,0,0.3);
-    color: var(--orange);
+    color: var(--gold);
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 0.8rem;
@@ -514,7 +514,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--orange);
+    background: var(--gold);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -533,7 +533,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--gold);
     margin-bottom: 12px;
   }
 
@@ -583,13 +583,13 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--orange);
+    color: var(--gold);
   }
   .card-price {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.65rem;
     font-weight: 900;
-    color: var(--orange);
+    color: var(--gold);
     line-height: 1;
   }
   .card-unit {
@@ -635,7 +635,7 @@
     position: absolute;
     top: 0; left: 0;
     width: 3px; height: 100%;
-    background: var(--orange);
+    background: var(--gold);
   }
   .energy-card:hover {
     border-color: rgba(255,107,0,0.4);
@@ -656,7 +656,7 @@
     font-weight: 700;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
-    color: var(--orange);
+    color: var(--gold);
     text-transform: uppercase;
     margin-bottom: 6px;
   }
@@ -674,7 +674,7 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 2rem;
     font-weight: 900;
-    color: var(--orange);
+    color: var(--gold);
     line-height: 1;
   }
   .energy-price small {
@@ -714,7 +714,7 @@
     line-height: 1;
     margin-bottom: 14px;
   }
-  .footer-logo span { color: var(--orange); }
+  .footer-logo span { color: var(--gold); }
   .footer-tagline {
     font-size: 0.85rem;
     color: var(--gray);
@@ -728,7 +728,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--gold);
     margin-bottom: 20px;
   }
 
@@ -753,7 +753,7 @@
     font-size: 0.78rem;
     color: var(--gray);
   }
-  .footer-bottom strong { color: var(--orange); }
+  .footer-bottom strong { color: var(--gold); }
 
   /* ══════════════════════════════════════
      DIVIDER
@@ -787,8 +787,8 @@
     transition: all 0.2s;
   }
   .filter-tab:hover, .filter-tab.active {
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--gold);
+    color: var(--gold);
     background: rgba(255,107,0,0.06);
   }
 
@@ -796,7 +796,7 @@
      ANNOUNCEMENT STRIP
   ══════════════════════════════════════ */
   .strip {
-    background: var(--orange);
+    background: var(--gold);
     padding: 10px 0;
     overflow: hidden;
     white-space: nowrap;

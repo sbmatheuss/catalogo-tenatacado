@@ -6,6 +6,7 @@ export interface Product {
   price: number;
   unit: string;
   image?: string;
+  inStock?: boolean;
 }
 
 export interface EnergyDrink extends Product {

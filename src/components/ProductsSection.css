@@ -1,5 +1,6 @@
 section {
   padding: 100px 60px;
+  background-color: transparent !important;
 }
 
 .section-header {
@@ -60,10 +61,40 @@ section {
 }
 
 #cervejas {
-  background-image: url('../assets/background-img.jpg');
+  background-image: url('../assets/back-heineken.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+#energeticos {
+  background-image: url('../assets/redbull2-back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #1a1a1a !important;
+}
+
+#energeticos .section-title,
+#energeticos .section-label,
+#energeticos .section-label::before,
+#energeticos .section-count {
+  color: #ffffff;
+}
+
+#refrigerantes {
+  background-image: url('../assets/guarana-back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #1a1a1a !important;
+}
+
+#refrigerantes .section-title,
+#refrigerantes .section-label,
+#refrigerantes .section-label::before,
+#refrigerantes .section-count {
+  color: #ffffff;
 }
 
 @media (max-width: 900px) {
