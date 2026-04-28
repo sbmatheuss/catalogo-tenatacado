@@ -294,6 +294,7 @@ export const softDrinks: Product[] = [
     volume: '350ml — Caixa c/6',
     price: 18.50,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 2,
@@ -302,6 +303,7 @@ export const softDrinks: Product[] = [
     volume: '350ml — Caixa c/12',
     price: 33,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 3,
@@ -310,6 +312,7 @@ export const softDrinks: Product[] = [
     volume: '350ml — Caixa c/12',
     price: 28,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 4,
@@ -318,6 +321,7 @@ export const softDrinks: Product[] = [
     volume: '350ml — Caixa c/12',
     price: 35,
     unit: '/cx',
+    inStock: false,
   },
   {
     id: 5,
@@ -326,6 +330,7 @@ export const softDrinks: Product[] = [
     volume: '1 Litro — Caixa c/6',
     price: 36,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 6,
@@ -334,6 +339,7 @@ export const softDrinks: Product[] = [
     volume: '1 Litro — Caixa c/12',
     price: 36,
     unit: '/cx',
+    inStock: true,
     expiryWarning: true,
   },
 ];
@@ -346,6 +352,7 @@ export const waters: Product[] = [
     volume: '1 Litro — Caixa c/12',
     price: 36,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 2,
@@ -354,6 +361,7 @@ export const waters: Product[] = [
     volume: '500ml — Caixa c/24',
     price: 48,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 3,
@@ -362,6 +370,7 @@ export const waters: Product[] = [
     volume: '1 Litro — Caixa c/12',
     price: 38,
     unit: '/cx',
+    inStock: true,
   },
 ];
 
@@ -373,6 +382,7 @@ export const iceDrinks: Product[] = [
     volume: '330ml — Caixa c/24',
     price: 120,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 2,
@@ -381,5 +391,6 @@ export const iceDrinks: Product[] = [
     volume: '330ml — Caixa c/24',
     price: 120,
     unit: '/cx',
+    inStock: true,
   },
 ];
