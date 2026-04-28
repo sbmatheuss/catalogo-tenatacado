@@ -52,7 +52,7 @@ function App() {
           title="Águas"
           subtitle="Hidratação"
           products={waters}
-          count="3 produtos"
+          count="4 produtos"
         />
       )}
       {activeCategory === 'ice' && (

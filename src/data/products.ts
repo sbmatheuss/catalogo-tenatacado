@@ -372,6 +372,15 @@ export const waters: Product[] = [
     unit: '/cx',
     inStock: true,
   },
+  {
+    id: 4,
+    brand: 'Petrópolis',
+    name: 'Petrópolis S/Gás',
+    volume: '500ml — Caixa c/6',
+    price: 14,
+    unit: '/cx',
+    inStock: true,
+  },
 ];
 
 export const iceDrinks: Product[] = [
