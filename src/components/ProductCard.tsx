@@ -172,6 +172,9 @@ export function ProductCard({ product }: ProductCardProps) {
       ) : product.inStock ? (
         <div className="card-stock" style={{ fontSize: '0.7rem', color: '#00A650', fontWeight: 600, marginBottom: '8px' }}>✓ Em Estoque</div>
       ) : null}
+      {product.expiryWarning && (
+        <div className="card-stock" style={{ fontSize: '0.65rem', color: '#FF9800', fontWeight: 600, marginBottom: '8px' }}>⚠ Validade Próxima</div>
+      )}
       <div className="card-price-row">
         <span className="card-currency">R$</span>
         <span className="card-price">{product.price}</span>

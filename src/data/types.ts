@@ -7,6 +7,7 @@ export interface Product {
   unit: string;
   image?: string;
   inStock?: boolean;
+  expiryWarning?: boolean;
 }
 
 export interface EnergyDrink extends Product {

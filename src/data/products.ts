@@ -279,9 +279,10 @@ export const energyDrinks: Product[] = [
     brand: 'Baly',
     name: 'Baly 2L',
     volume: '2L — Caixa c/6',
-    price: 36,
+    price: 30,
     unit: '/cx',
     inStock: true,
+    expiryWarning: true,
   },
 ];
 
