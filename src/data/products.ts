@@ -265,10 +265,18 @@ export const energyDrinks: Product[] = [
   },
   {
     id: 3,
-    brand: 'Vibran',
-    name: 'Vibran Energy',
-    volume: '269ml — Caixa c/24',
-    price: 96,
+    brand: 'Bivolt',
+    name: 'Bivolt',
+    volume: '2L — Caixa c/6',
+    price: 36,
+    unit: '/cx',
+  },
+  {
+    id: 4,
+    brand: 'Baly',
+    name: 'Baly 2L',
+    volume: '2L — Caixa c/6',
+    price: 36,
     unit: '/cx',
   },
 ];
