@@ -86,26 +86,3 @@
   border-top: 1px solid rgba(0,0,0,0.1);
   width: 100%;
 }
-
-.card-currency {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--black);
-}
-
-.card-price {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.65rem;
-  font-weight: 900;
-  color: var(--black);
-  line-height: 1;
-}
-
-.card-unit {
-  font-size: 0.72rem;
-  color: var(--gray);
-  font-weight: 400;
-  margin-left: 4px;
-  align-self: center;
-}
