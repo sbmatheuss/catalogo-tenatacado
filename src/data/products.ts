@@ -224,7 +224,7 @@ export const beers: Product[] = [
     volume: '1 Litro — Caixa c/12',
     price: 66,
     unit: '/cx',
-    inStock: true,
+    inStock: false,
   },
   {
     id: 24,

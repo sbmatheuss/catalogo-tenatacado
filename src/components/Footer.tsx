@@ -1,4 +1,7 @@
+import { QRCodeSVG } from 'qrcode.react';
 import './Footer.css';
+
+const SITE_URL = 'https://sbmatheuss.github.io/catalogo-tenatacado';
 
 export function Footer() {
   return (
@@ -9,6 +12,10 @@ export function Footer() {
           Os melhores rótulos do mercado com preços de atacado imbatíveis.
           Qualidade e variedade para o seu negócio.
         </p>
+        <div className="footer-qrcode">
+          <QRCodeSVG value={SITE_URL} size={100} level="M" />
+          <p className="qrcode-label">Escaneie para acessar</p>
+        </div>
       </div>
 
       <div className="footer-column">
