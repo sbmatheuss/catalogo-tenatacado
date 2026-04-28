@@ -1,7 +1,7 @@
 import { QRCodeSVG } from 'qrcode.react';
 import './Footer.css';
 
-const SITE_URL = 'https://sbmatheuss.github.io/catalogo-tenatacado';
+const SITE_URL = 'https://tenatacado.netlify.app/';
 
 export function Footer() {
   return (
