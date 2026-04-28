@@ -91,14 +91,14 @@
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--black);
 }
 
 .card-price {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.65rem;
   font-weight: 900;
-  color: var(--gold);
+  color: var(--black);
   line-height: 1;
 }
 
