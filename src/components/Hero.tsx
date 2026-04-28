@@ -2,9 +2,9 @@ import './Hero.css';
 
 export function Hero() {
   return (
-    <div className="hero">
-      <div className="hero-bg"></div>
-      <div className="hero-grid-lines"></div>
+    <section className="hero">
+      <div className="hero-bg" aria-hidden="true"></div>
+      <div className="hero-grid-lines" aria-hidden="true"></div>
       <div className="hero-circle-1"></div>
       <div className="hero-circle-2"></div>
 
@@ -39,13 +39,13 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-visual">
+      <div className="hero-visual" aria-hidden="true">
         <svg viewBox="0 0 500 500" width="480" height="480" style={{opacity: 0.18, position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)'}}>
           <circle cx="250" cy="250" r="200" fill="none" stroke="#C9A962" strokeWidth="1" />
           <circle cx="250" cy="250" r="150" fill="none" stroke="#C9A962" strokeWidth="0.5" />
           <circle cx="250" cy="250" r="100" fill="none" stroke="#C9A962" strokeWidth="0.3" />
         </svg>
       </div>
-    </div>
+    </section>
   );
 }

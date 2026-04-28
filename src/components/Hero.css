@@ -8,21 +8,17 @@
   padding: 80px 60px;
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/back-heineken.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  opacity: 0.85;
-}
-
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
+  background-image: url('../assets/back-heineken.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 
 .hero-grid-lines {
