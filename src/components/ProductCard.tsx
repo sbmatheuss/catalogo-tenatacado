@@ -12,12 +12,21 @@ import HeinekenLong0 from '../assets/heineken-long0.jpg';
 import Heineken600ml from '../assets/heineken-600ml.jpg';
 import ImperioPuroMalte from '../assets/imperioPuroMalte.jpg';
 import HeinekenLongShot from '../assets/heinekenlong-shot.jpg';
+import ImperioBranca from '../assets/imperioBranca.png';
 import BrahmaLata from '../assets/brahmaLata.jpg';
 import CoronaLong from '../assets/coronaLong.jpg';
 import AmstelUltra from '../assets/amstelUltra.jpg';
 import Bud1L from '../assets/bud1L.png';
 import BudLata from '../assets/budLata.png';
 import BudZeroLata from '../assets/budZeroLata.jpg';
+import BudLong from '../assets/budLong.jpg';
+import BudLongZero from '../assets/budLongZero.jpg';
+import ImperioLong from '../assets/imperioLong.jpg';
+import ImperioLongHelles from '../assets/imperioLongHelles.png';
+import ItaipavaLata from '../assets/itaipavaLata.jpg';
+import Itaipava1L from '../assets/itaipava1L.jpg';
+import OriginalLitrinho from '../assets/originalLitrinho.jpg';
+import Original600ml from '../assets/original600ml.png';
 import BrusselsUltraLata from '../assets/brusselsUltra-lata.jpg';
 
 interface ProductCardProps {
@@ -71,6 +80,9 @@ export function ProductCard({ product }: ProductCardProps) {
         {product.name === 'Império Puro Malte' && (
           <img src={ImperioPuroMalte} alt="Império Puro Malte" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         )}
+        {product.name === 'Império Branca Lata' && (
+          <img src={ImperioBranca} alt="Império Branca Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
         {product.name === 'Heineken Long Shot 250ml' && (
           <img src={HeinekenLongShot} alt="Heineken Long Shot 250ml" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         )}
@@ -92,10 +104,34 @@ export function ProductCard({ product }: ProductCardProps) {
         {product.name === 'Budweiser Zero Lata' && (
           <img src={BudZeroLata} alt="Budweiser Zero Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         )}
+        {product.name === 'Budweiser Long' && (
+          <img src={BudLong} alt="Budweiser Long" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Budweiser Long Zero' && (
+          <img src={BudLongZero} alt="Budweiser Long Zero" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Império Long Verde' && (
+          <img src={ImperioLong} alt="Império Long Verde" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Império Helles Long' && (
+          <img src={ImperioLongHelles} alt="Império Helles Long" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Itaipava Lata' && (
+          <img src={ItaipavaLata} alt="Itaipava Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Itaipava 1L' && (
+          <img src={Itaipava1L} alt="Itaipava 1L" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Original Litrinho' && (
+          <img src={OriginalLitrinho} alt="Original Litrinho" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Original 600ml' && (
+          <img src={Original600ml} alt="Original 600ml" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
         {product.name === 'Brussels Ultra Lata' && (
           <img src={BrusselsUltraLata} alt="Brussels Ultra Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         )}
-        {!['Amstel Lata', 'Heineken Lata', 'Império Verde Lata', 'Amstel 1L', 'Amstel 600ml', 'Amstel Litrinho', 'Heineken Lata Zero', 'Heineken Long Zero', 'Heineken Long', 'Heineken 600ml', 'Império Puro Malte', 'Heineken Long Shot 250ml', 'Brahma Lata', 'Corona Long', 'Amstel Ultra Lata', 'Budweiser 1L', 'Budweiser Lata', 'Budweiser Zero Lata', 'Brussels Ultra Lata'].includes(product.name) && (
+        {!['Amstel Lata', 'Heineken Lata', 'Império Verde Lata', 'Amstel 1L', 'Amstel 600ml', 'Amstel Litrinho', 'Heineken Lata Zero', 'Heineken Long Zero', 'Heineken Long', 'Heineken 600ml', 'Império Puro Malte', 'Império Branca Lata', 'Heineken Long Shot 250ml', 'Brahma Lata', 'Corona Long', 'Amstel Ultra Lata', 'Budweiser 1L', 'Budweiser Lata', 'Budweiser Zero Lata', 'Brussels Ultra Lata', 'Budweiser Long', 'Budweiser Long Zero', 'Império Long Verde', 'Império Helles Long', 'Itaipava Lata', 'Itaipava 1L', 'Original Litrinho', 'Original 600ml'].includes(product.name) && (
           <svg viewBox="0 0 70 120" width="65" height="110">
           <defs>
             <linearGradient id={`grad-${product.id}`} x1="0%" y1="0%" x2="100%" y2="0%">

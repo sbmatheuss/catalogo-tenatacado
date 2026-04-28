@@ -14,31 +14,10 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
       <Hero />
       <Novidade />
       <div className="divider"></div>
-
-      <div className="category-filters">
-        <button
-          className={`filter-btn ${activeCategory === 'cervejas' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('cervejas')}
-        >
-          Cervejas
-        </button>
-        <button
-          className={`filter-btn ${activeCategory === 'energeticos' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('energeticos')}
-        >
-          Energéticos
-        </button>
-        <button
-          className={`filter-btn ${activeCategory === 'refrigerantes' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('refrigerantes')}
-        >
-          Refrigerantes
-        </button>
-      </div>
 
       {activeCategory === 'cervejas' && (
         <ProductsSection

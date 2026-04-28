@@ -1,12 +1,39 @@
 import './Header.css';
 
-export function Header() {
+type Category = 'cervejas' | 'energeticos' | 'refrigerantes';
+
+interface HeaderProps {
+  activeCategory: Category;
+  onCategoryChange: (category: Category) => void;
+}
+
+export function Header({ activeCategory, onCategoryChange }: HeaderProps) {
   return (
     <header>
       <div className="logo">TEN<span>.</span>atacado</div>
       <nav>
         <a href="#novidade">Novidade<span className="nav-badge">New</span></a>
       </nav>
+      <div className="category-filters">
+        <button
+          className={`filter-btn ${activeCategory === 'cervejas' ? 'active' : ''}`}
+          onClick={() => onCategoryChange('cervejas')}
+        >
+          Cervejas
+        </button>
+        <button
+          className={`filter-btn ${activeCategory === 'energeticos' ? 'active' : ''}`}
+          onClick={() => onCategoryChange('energeticos')}
+        >
+          Energéticos
+        </button>
+        <button
+          className={`filter-btn ${activeCategory === 'refrigerantes' ? 'active' : ''}`}
+          onClick={() => onCategoryChange('refrigerantes')}
+        >
+          Refrigerantes
+        </button>
+      </div>
     </header>
   );
 }

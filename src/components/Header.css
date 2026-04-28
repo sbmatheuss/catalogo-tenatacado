@@ -58,7 +58,40 @@ nav a:hover {
   margin-left: 4px;
 }
 
+.category-filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
 @media (max-width: 900px) {
   header { padding: 0 24px; }
   nav { display: none; }
+  .category-filters { display: none; }
 }
