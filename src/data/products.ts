@@ -291,8 +291,8 @@ export const softDrinks: Product[] = [
     id: 1,
     brand: 'Coca-Cola',
     name: 'Coca-Cola Lata',
-    volume: '350ml — Caixa c/12',
-    price: 42,
+    volume: '350ml — Caixa c/6',
+    price: 18.50,
     unit: '/cx',
   },
   {
@@ -300,7 +300,7 @@ export const softDrinks: Product[] = [
     brand: 'Guaraná Antarctica',
     name: 'Guaraná Lata',
     volume: '350ml — Caixa c/12',
-    price: 36,
+    price: 33,
     unit: '/cx',
   },
   {
@@ -308,7 +308,7 @@ export const softDrinks: Product[] = [
     brand: 'Pepsi',
     name: 'Pepsi Lata',
     volume: '350ml — Caixa c/12',
-    price: 38,
+    price: 28,
     unit: '/cx',
   },
   {
@@ -318,6 +318,23 @@ export const softDrinks: Product[] = [
     volume: '350ml — Caixa c/12',
     price: 35,
     unit: '/cx',
+  },
+  {
+    id: 5,
+    brand: 'Coca-Cola',
+    name: 'Coca-Cola 1L',
+    volume: '1 Litro — Caixa c/6',
+    price: 36,
+    unit: '/cx',
+  },
+  {
+    id: 6,
+    brand: 'Guaraná Antarctica',
+    name: 'Guaraná 1L',
+    volume: '1 Litro — Caixa c/12',
+    price: 36,
+    unit: '/cx',
+    expiryWarning: true,
   },
 ];
 

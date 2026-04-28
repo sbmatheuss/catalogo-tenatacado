@@ -43,7 +43,7 @@ function App() {
           title="Refrigerantes"
           subtitle="Refrescos"
           products={softDrinks}
-          count="4 produtos"
+          count="6 produtos"
         />
       )}
       {activeCategory === 'aguas' && (
