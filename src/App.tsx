@@ -34,7 +34,7 @@ function App() {
           title="Energéticos"
           subtitle="Energia"
           products={energyDrinks}
-          count="3 produtos"
+          count="4 produtos"
         />
       )}
       {activeCategory === 'refrigerantes' && (

@@ -28,6 +28,9 @@ import Itaipava1L from '../assets/itaipava1L.jpg';
 import OriginalLitrinho from '../assets/originalLitrinho.jpg';
 import Original600ml from '../assets/original600ml.png';
 import Baly from '../assets/Baly.jpg';
+import RedBull from '../assets/redbullPct.jpg';
+import Monster from '../assets/monster.jpg';
+import Bivolt from '../assets/Bivolt2L.png';
 import BrusselsUltraLata from '../assets/brusselsUltra-lata.jpg';
 
 interface ProductCardProps {
@@ -135,7 +138,16 @@ export function ProductCard({ product }: ProductCardProps) {
         {product.name === 'Baly 2L' && (
           <img src={Baly} alt="Baly 2L" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
         )}
-        {!['Amstel Lata', 'Heineken Lata', 'Império Verde Lata', 'Amstel 1L', 'Amstel 600ml', 'Amstel Litrinho', 'Heineken Lata Zero', 'Heineken Long Zero', 'Heineken Long', 'Heineken 600ml', 'Império Puro Malte', 'Império Branca Lata', 'Heineken Long Shot 250ml', 'Brahma Lata', 'Corona Long', 'Amstel Ultra Lata', 'Budweiser 1L', 'Budweiser Lata', 'Budweiser Zero Lata', 'Brussels Ultra Lata', 'Budweiser Long', 'Budweiser Long Zero', 'Império Long Verde', 'Império Helles Long', 'Itaipava Lata', 'Itaipava 1L', 'Original Litrinho', 'Original 600ml', 'Baly 2L'].includes(product.name) && (
+        {product.name === 'Red Bull Energy Drink' && (
+          <img src={RedBull} alt="Red Bull Energy Drink" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Monster Energy' && (
+          <img src={Monster} alt="Monster Energy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {product.name === 'Bivolt' && (
+          <img src={Bivolt} alt="Bivolt" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        )}
+        {!['Amstel Lata', 'Heineken Lata', 'Império Verde Lata', 'Amstel 1L', 'Amstel 600ml', 'Amstel Litrinho', 'Heineken Lata Zero', 'Heineken Long Zero', 'Heineken Long', 'Heineken 600ml', 'Império Puro Malte', 'Império Branca Lata', 'Heineken Long Shot 250ml', 'Brahma Lata', 'Corona Long', 'Amstel Ultra Lata', 'Budweiser 1L', 'Budweiser Lata', 'Budweiser Zero Lata', 'Brussels Ultra Lata', 'Budweiser Long', 'Budweiser Long Zero', 'Império Long Verde', 'Império Helles Long', 'Itaipava Lata', 'Itaipava 1L', 'Original Litrinho', 'Original 600ml', 'Baly 2L', 'Red Bull Energy Drink', 'Monster Energy', 'Bivolt'].includes(product.name) && (
           <svg viewBox="0 0 70 120" width="65" height="110">
           <defs>
             <linearGradient id={`grad-${product.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
@@ -183,6 +195,9 @@ function getBrandColor(brand: string, index: number): string {
     'Coca-Cola': ['#c00000', '#e00000', '#900000'],
     'Guaraná': ['#e8b800', '#ffcc00', '#c9a800'],
     'Pepsi': ['#004B93', '#0066cc', '#003366'],
+    'Red Bull': ['#E2141B', '#FF0000', '#B00000'],
+    'Monster': ['#86E11E', '#ADFF00', '#5C9F00'],
+    'Bivolt': ['#000000', '#1a1a1a', '#0d0d0d'],
     'Baly': ['#000000', '#1a1a1a', '#0d0d0d'],
     'Fanta': ['#ff6600', '#ff8533', '#cc5200'],
   };

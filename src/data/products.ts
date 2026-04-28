@@ -254,6 +254,7 @@ export const energyDrinks: Product[] = [
     volume: '250ml — Caixa c/24',
     price: 174,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 2,
@@ -262,6 +263,7 @@ export const energyDrinks: Product[] = [
     volume: '473ml — Caixa c/6',
     price: 60,
     unit: '/cx',
+    inStock: false,
   },
   {
     id: 3,
@@ -270,6 +272,7 @@ export const energyDrinks: Product[] = [
     volume: '2L — Caixa c/6',
     price: 36,
     unit: '/cx',
+    inStock: true,
   },
   {
     id: 4,
@@ -278,6 +281,7 @@ export const energyDrinks: Product[] = [
     volume: '2L — Caixa c/6',
     price: 36,
     unit: '/cx',
+    inStock: true,
   },
 ];
 
