@@ -307,3 +307,49 @@ export const softDrinks: Product[] = [
     unit: '/cx',
   },
 ];
+
+export const waters: Product[] = [
+  {
+    id: 1,
+    brand: 'Crystal',
+    name: 'Crystal 1L',
+    volume: '1 Litro — Caixa c/12',
+    price: 36,
+    unit: '/cx',
+  },
+  {
+    id: 2,
+    brand: 'Crystal',
+    name: 'Crystal 500ml',
+    volume: '500ml — Caixa c/24',
+    price: 48,
+    unit: '/cx',
+  },
+  {
+    id: 3,
+    brand: 'Minalba',
+    name: 'Minalba 1L',
+    volume: '1 Litro — Caixa c/12',
+    price: 38,
+    unit: '/cx',
+  },
+];
+
+export const iceDrinks: Product[] = [
+  {
+    id: 1,
+    brand: 'Heineken',
+    name: 'Heineken Ice',
+    volume: '330ml — Caixa c/24',
+    price: 120,
+    unit: '/cx',
+  },
+  {
+    id: 2,
+    brand: 'Budweiser',
+    name: 'Budweiser Ice',
+    volume: '330ml — Caixa c/24',
+    price: 120,
+    unit: '/cx',
+  },
+];

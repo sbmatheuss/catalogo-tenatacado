@@ -5,9 +5,9 @@ import { Hero } from './components/Hero';
 import { Novidade } from './components/Novidade';
 import { ProductsSection } from './components/ProductsSection';
 import { Footer } from './components/Footer';
-import { beers, energyDrinks, softDrinks } from './data/products';
+import { beers, energyDrinks, softDrinks, waters, iceDrinks } from './data/products';
 
-type Category = 'cervejas' | 'energeticos' | 'refrigerantes';
+type Category = 'cervejas' | 'energeticos' | 'refrigerantes' | 'aguas' | 'ice';
 
 function App() {
   const [activeCategory, setActiveCategory] = useState<Category>('cervejas');
@@ -44,6 +44,24 @@ function App() {
           subtitle="Refrescos"
           products={softDrinks}
           count="4 produtos"
+        />
+      )}
+      {activeCategory === 'aguas' && (
+        <ProductsSection
+          id="aguas"
+          title="Águas"
+          subtitle="Hidratação"
+          products={waters}
+          count="3 produtos"
+        />
+      )}
+      {activeCategory === 'ice' && (
+        <ProductsSection
+          id="ice"
+          title="Ice"
+          subtitle="Geladas"
+          products={iceDrinks}
+          count="2 produtos"
         />
       )}
       <Footer />
