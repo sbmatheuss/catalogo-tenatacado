@@ -1,7 +1,7 @@
 import { QRCodeSVG } from 'qrcode.react';
 import './Footer.css';
 
-const SITE_URL = 'https://catalogo-tenatacado.pagework.workers.dev/';
+const SITE_URL = 'https://catalogo-tenatacado.pages.dev/';
 
 export function Footer() {
   return (
