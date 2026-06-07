@@ -484,8 +484,6 @@
   ══════════════════════════════════════ */
   #cervejas { background: #F0EDE8; }
   #energeticos { background: var(--dark2); }
-  #refrigerantes { background: var(--black); }
-
   .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -685,15 +683,6 @@
   }
 
   /* ══════════════════════════════════════
-     REFRIGERANTES
-  ══════════════════════════════════════ */
-  .refri-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 18px;
-  }
-
-  /* ══════════════════════════════════════
      FOOTER
   ══════════════════════════════════════ */
   footer {
@@ -862,6 +851,6 @@
   }
 
   @media (max-width: 500px) {
-    .products-grid, .refri-grid { grid-template-columns: 1fr 1fr; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
     .energy-grid { grid-template-columns: 1fr; }
   }

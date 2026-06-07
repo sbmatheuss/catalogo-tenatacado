@@ -23,7 +23,6 @@ export function Footer() {
         <div className="footer-links">
           <a href="#cervejas">Cervejas</a>
           <a href="#energeticos">Energéticos</a>
-          <a href="#refrigerantes">Refrigerantes</a>
           <a href="#novidade">Novidades</a>
         </div>
       </div>

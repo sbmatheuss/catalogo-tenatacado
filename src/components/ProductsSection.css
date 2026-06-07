@@ -64,19 +64,14 @@ section {
   background: var(--dark2);
 }
 
-#energeticos,
-#refrigerantes {
+#energeticos {
   background-color: var(--dark2) !important;
 }
 
 #energeticos .section-title,
 #energeticos .section-label,
 #energeticos .section-label::before,
-#energeticos .section-count,
-#refrigerantes .section-title,
-#refrigerantes .section-label,
-#refrigerantes .section-label::before,
-#refrigerantes .section-count {
+#energeticos .section-count {
   color: #ffffff;
 }
 
