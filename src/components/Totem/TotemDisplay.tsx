@@ -1,5 +1,11 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import './TotemDisplay.css';
 
 export interface TotemSlide {
@@ -17,79 +23,57 @@ interface TotemDisplayProps {
 
 export function TotemDisplay({ slides, autoAdvanceMs = 8000 }: TotemDisplayProps) {
   const [current, setCurrent] = useState(0);
-  const [progressKey, setProgressKey] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const touchStartX = useRef<number | null>(null);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const goTo = useCallback(
-    (index: number) => {
-      const clamped = (index + slides.length) % slides.length;
-      setCurrent(clamped);
-      setProgressKey((k) => k + 1);
-    },
-    [slides.length]
-  );
-
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
-
-  useEffect(() => {
-    if (slides.length <= 1) return;
-    timerRef.current = setTimeout(() => goTo(current + 1), autoAdvanceMs);
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [current, autoAdvanceMs, slides.length, goTo]);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const delta = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(delta) >= 50) delta > 0 ? next() : prev();
-    touchStartX.current = null;
-  };
+  const [progress, setProgress] = useState(0);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   if (!slides.length) return null;
 
   const activeSlide = slides[current];
 
   return (
-    <div
-      className="totem-root"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
+    <div className="totem-root" style={{ '--accent': activeSlide.accent } as React.CSSProperties}>
       <div className="totem-progress-track">
         <div
-          key={progressKey}
           className="totem-progress-fill"
-          style={{ '--duration': `${autoAdvanceMs}ms`, '--accent': activeSlide.accent } as React.CSSProperties}
+          style={{ width: `${progress * 100}%`, transition: 'none', background: activeSlide.accent }}
         />
       </div>
 
-      <div className="totem-strip" style={{ transform: `translateX(-${current * 100}%)` }}>
+      <Swiper
+        modules={[Autoplay, Navigation, Pagination]}
+        autoplay={{ delay: autoAdvanceMs, disableOnInteraction: false }}
+        loop={slides.length > 1}
+        speed={600}
+        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        onSlideChange={(swiper) => {
+          const realIndex = swiper.realIndex ?? swiper.activeIndex;
+          setCurrent(realIndex % slides.length);
+        }}
+        onAutoplayTimeLeft={(_swiper: SwiperType, _timeLeft: number, percentage: number) => {
+          setProgress(1 - percentage);
+        }}
+        style={{ width: '100%', height: '100%' }}
+        allowTouchMove={true}
+      >
         {slides.map((slide) => (
-          <div key={slide.id} className="totem-slide" style={{ background: slide.background }}>
-            {slide.content}
-          </div>
+          <SwiperSlide key={slide.id} style={{ background: slide.background }}>
+            <div className="totem-slide">
+              {slide.content}
+            </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       <button
-        className={`totem-arrow totem-arrow--left${isHovered ? ' totem-arrow--visible' : ''}`}
-        onClick={prev}
+        className="totem-arrow totem-arrow--left totem-arrow--visible"
+        onClick={() => swiperRef.current?.slidePrev()}
         aria-label="Slide anterior"
       >
         &#8249;
       </button>
-
       <button
-        className={`totem-arrow totem-arrow--right${isHovered ? ' totem-arrow--visible' : ''}`}
-        onClick={next}
+        className="totem-arrow totem-arrow--right totem-arrow--visible"
+        onClick={() => swiperRef.current?.slideNext()}
         aria-label="Próximo slide"
       >
         &#8250;
@@ -101,7 +85,10 @@ export function TotemDisplay({ slides, autoAdvanceMs = 8000 }: TotemDisplayProps
             key={slide.id}
             className={`totem-indicator${i === current ? ' totem-indicator--active' : ''}`}
             style={i === current ? ({ '--accent': activeSlide.accent } as React.CSSProperties) : undefined}
-            onClick={() => goTo(i)}
+            onClick={() => {
+              swiperRef.current?.slideToLoop(i);
+              setCurrent(i);
+            }}
             aria-label={`Ir para ${slide.label}`}
           >
             <span className="totem-indicator-label">{slide.label}</span>

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import type { Product } from '../data/types';
 import { ProductCard } from './ProductCard';
 import './ProductsSection.css';
@@ -22,8 +23,16 @@ export function ProductsSection({ id, title, subtitle, products, background, cou
         <div className="section-count">{count}</div>
       </div>
       <div className="products-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product, index) => (
+          <motion.div
+            key={product.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+          >
+            <ProductCard product={product} />
+          </motion.div>
         ))}
       </div>
     </section>

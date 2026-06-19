@@ -854,3 +854,53 @@
     .products-grid { grid-template-columns: 1fr 1fr; }
     .energy-grid { grid-template-columns: 1fr; }
   }
+
+/* ══════════════════════════════════════
+   MICRO-INTERAÇÕES & PERFORMANCE
+══════════════════════════════════════ */
+
+.product-card,
+.energy-card,
+.mm-card,
+.btn-primary,
+.btn-secondary,
+.filter-tab,
+.filter-btn,
+.totem-indicator {
+  will-change: transform;
+}
+
+.totem-root button,
+.totem-root [role="button"],
+.totem-arrow,
+.totem-indicator {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.filter-tab,
+.filter-btn,
+.btn-primary,
+.btn-secondary,
+nav a,
+.footer-links a {
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .strip-inner { animation: none !important; }
+  .mm-title, .mm-card-price, .novidade-glow, .mm-card::before { animation: none !important; }
+  .totem-progress-fill { transition: none !important; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

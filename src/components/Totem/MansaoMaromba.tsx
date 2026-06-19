@@ -1,11 +1,22 @@
+import type { ReactNode } from 'react';
+import { GlassWater, Wine, Leaf, Flame, Citrus, Crown } from 'lucide-react';
 import './MansaoMaromba.css';
 
-const mansaoProducts = [
-  { id: 1, icon: '🥃', name: 'Whisky Tradicional', desc: "Jack Daniel's 1L — Cx c/6", price: 'R$ 390', tag: 'Mais Vendido' },
-  { id: 2, icon: '🍸', name: 'Vodka', desc: 'Smirnoff 1L — Cx c/12', price: 'R$ 480', tag: 'Mais Vendido' },
-  { id: 3, icon: '🌿', name: 'Gin Melancia', desc: 'Beefeater Pink 750ml — Cx c/6', price: 'R$ 330', tag: 'Mais Vendido' },
-  { id: 4, icon: '🐯', name: 'Gin Tigrinho', desc: "Tiger's Den Gin 750ml — Cx c/6", price: 'R$ 360', tag: 'Mais Vendido' },
-  { id: 5, icon: '🍏', name: 'Whisky Maçã Verde', desc: 'Apple Valley Whisky 1L — Cx c/6', price: 'R$ 420', tag: 'Mais Vendido' },
+interface MansaoProduct {
+  id: number;
+  icon: ReactNode;
+  name: string;
+  desc: string;
+  price: string;
+  tag: string;
+}
+
+const mansaoProducts: MansaoProduct[] = [
+  { id: 1, icon: <GlassWater size={48} color="#C9A962" strokeWidth={1.5} />, name: 'Whisky Tradicional', desc: "Jack Daniel's 1L — Cx c/6", price: 'R$ 390', tag: 'Mais Vendido' },
+  { id: 2, icon: <Wine size={48} color="#C9A962" strokeWidth={1.5} />, name: 'Vodka', desc: 'Smirnoff 1L — Cx c/12', price: 'R$ 480', tag: 'Mais Vendido' },
+  { id: 3, icon: <Leaf size={48} color="#C9A962" strokeWidth={1.5} />, name: 'Gin Melancia', desc: 'Beefeater Pink 750ml — Cx c/6', price: 'R$ 330', tag: 'Mais Vendido' },
+  { id: 4, icon: <Flame size={48} color="#C9A962" strokeWidth={1.5} />, name: 'Gin Tigrinho', desc: "Tiger's Den Gin 750ml — Cx c/6", price: 'R$ 360', tag: 'Mais Vendido' },
+  { id: 5, icon: <Citrus size={48} color="#C9A962" strokeWidth={1.5} />, name: 'Whisky Maçã Verde', desc: 'Apple Valley Whisky 1L — Cx c/6', price: 'R$ 420', tag: 'Mais Vendido' },
 ];
 
 const OrnamentTop = () => (
@@ -42,7 +53,9 @@ export function MansaoMaromba() {
     <section className="mansao-maromba">
       <header className="mm-header">
         <OrnamentTop />
-        <div className="mm-crown" aria-hidden="true">♛</div>
+        <div className="mm-crown" aria-hidden="true">
+          <Crown size={44} color="#FFD700" strokeWidth={1.5} />
+        </div>
         <p className="mm-brand-mark">Catálogo Exclusivo</p>
         <h1 className="mm-title">Mansão Maromba</h1>
         <p className="mm-subtitle">Os Mais Vendidos</p>

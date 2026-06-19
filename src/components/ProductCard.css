@@ -76,6 +76,18 @@
   margin-bottom: 14px;
 }
 
+.card-stock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card-stock--out { color: #E53935; }
+.card-stock--in { color: #00A650; }
+.card-stock--warning { color: #FF9800; font-size: 0.65rem; }
+
 .card-price-row {
   display: flex;
   align-items: baseline;

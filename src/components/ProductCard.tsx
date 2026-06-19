@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import { X, Check, AlertTriangle } from 'lucide-react';
+import clsx from 'clsx';
 import type { Product } from '../data/types';
 import './ProductCard.css';
 import AmstelLata from '../assets/amstel-lata.jpg';
@@ -83,7 +86,11 @@ export function ProductCard({ product }: ProductCardProps) {
   const img = imageMap[product.name];
 
   return (
-    <div className="product-card">
+    <motion.div
+      className="product-card"
+      whileHover={{ scale: 1.03, y: -4 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+    >
       <div className="card-brand">{product.brand}</div>
       <div className="card-img" style={{ contentVisibility: 'auto' }}>
         {img ? (
@@ -109,19 +116,25 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="card-name">{product.name}</div>
       <div className="card-volume">{product.volume}</div>
       {product.inStock === false ? (
-        <div className="card-stock" style={{ fontSize: '0.7rem', color: '#E53935', fontWeight: 600, marginBottom: '8px' }}>✕ Sem Estoque</div>
+        <div className={clsx('card-stock', 'card-stock--out')}>
+          <X size={12} strokeWidth={2.5} /> Sem Estoque
+        </div>
       ) : product.inStock ? (
-        <div className="card-stock" style={{ fontSize: '0.7rem', color: '#00A650', fontWeight: 600, marginBottom: '8px' }}>✓ Em Estoque</div>
+        <div className={clsx('card-stock', 'card-stock--in')}>
+          <Check size={12} strokeWidth={2.5} /> Em Estoque
+        </div>
       ) : null}
       {product.expiryWarning && (
-        <div className="card-stock" style={{ fontSize: '0.65rem', color: '#FF9800', fontWeight: 600, marginBottom: '8px' }}>⚠ Validade Próxima</div>
+        <div className={clsx('card-stock', 'card-stock--warning')}>
+          <AlertTriangle size={12} strokeWidth={2} /> Validade Próxima
+        </div>
       )}
       <div className="card-price-row">
         <span className="card-currency">R$</span>
         <span className="card-price">{product.price}</span>
         <span className="card-unit">{product.unit}</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

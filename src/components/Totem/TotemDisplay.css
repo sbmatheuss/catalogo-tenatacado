@@ -21,27 +21,12 @@
 
 .totem-progress-fill {
   height: 100%;
-  width: 0%;
   background: var(--accent, #ffffff);
-  animation: totem-progress var(--duration, 8000ms) linear forwards;
   border-radius: 0 2px 2px 0;
-}
-
-@keyframes totem-progress {
-  from { width: 0%; }
-  to { width: 100%; }
-}
-
-.totem-strip {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-  will-change: transform;
+  transition: width 0.1s linear;
 }
 
 .totem-slide {
-  flex: 0 0 100%;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -155,4 +140,15 @@
 
 @media (max-width: 480px) {
   .totem-arrow { width: 40px; height: 40px; font-size: 1.8rem; }
+}
+
+.totem-root .swiper {
+  width: 100%;
+  height: 100%;
+}
+.totem-root .swiper-wrapper {
+  height: 100%;
+}
+.totem-root .swiper-slide {
+  height: 100%;
 }

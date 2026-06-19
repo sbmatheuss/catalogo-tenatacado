@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Hero.css';
 import { beers, energyDrinks } from '../data/products';
 
@@ -12,7 +13,12 @@ export function Hero() {
       <div className="hero-circle-1"></div>
       <div className="hero-circle-2"></div>
 
-      <div className="hero-content animate-fade-up">
+      <motion.div
+        className="hero-content"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <div className="hero-tag">Catálogo Oficial 2026</div>
         <h1 className="hero-title">
           Bebidas<br />
@@ -41,7 +47,7 @@ export function Hero() {
             <div className="stat-label">Preço Atacado</div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="hero-visual" aria-hidden="true">
         <svg viewBox="0 0 500 500" width="480" height="480" style={{opacity: 0.18, position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)'}}>

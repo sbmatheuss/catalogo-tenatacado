@@ -1,11 +1,12 @@
 import './Header.css';
+import { Monitor } from 'lucide-react';
 
 type Category = 'cervejas' | 'energeticos';
 
 interface HeaderProps {
   activeCategory: Category;
   onCategoryChange: (category: Category) => void;
-  onTotemOpen: () => void;
+  onTotemOpen?: () => void;
 }
 
 export function Header({ activeCategory, onCategoryChange, onTotemOpen }: HeaderProps) {
@@ -28,11 +29,9 @@ export function Header({ activeCategory, onCategoryChange, onTotemOpen }: Header
         >
           Energéticos
         </button>
-        <button
-          className="filter-btn totem-btn"
-          onClick={onTotemOpen}
-        >
-          📺 Vitrine
+        <button className="filter-btn totem-btn" onClick={onTotemOpen}>
+          <Monitor size={16} strokeWidth={1.8} style={{ marginRight: 6, verticalAlign: 'middle' }} />
+          Vitrine
         </button>
       </div>
     </header>
