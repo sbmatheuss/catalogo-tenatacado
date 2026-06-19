@@ -17,7 +17,7 @@ export function Hero() {
         className="hero-content"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="hero-tag">Catálogo Oficial 2026</div>
         <h1 className="hero-title">

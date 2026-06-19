@@ -278,6 +278,7 @@
   line-height: 1;
   animation: mm-shimmer 3s linear infinite;
   letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
 }
 
 .mm-footer {

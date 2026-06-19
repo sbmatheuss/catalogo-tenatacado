@@ -36,7 +36,10 @@ nav a {
   padding: 8px 14px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.2s;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 nav a:hover {
   color: #000000;
@@ -70,12 +73,14 @@ nav a:hover {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 8px 18px;
+  min-height: 44px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  transition: all 0.25s ease;
+  touch-action: manipulation;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .filter-btn:hover {

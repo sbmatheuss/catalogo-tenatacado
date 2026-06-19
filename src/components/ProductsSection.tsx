@@ -29,7 +29,7 @@ export function ProductsSection({ id, title, subtitle, products, background, cou
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+            transition={{ duration: 0.35, delay: index * 0.04, ease: 'easeOut' }}
           >
             <ProductCard product={product} />
           </motion.div>

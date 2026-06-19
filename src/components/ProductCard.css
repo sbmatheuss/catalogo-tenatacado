@@ -6,7 +6,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.3s ease;
+  /* transition: all é anti-pattern — animamos apenas transform e shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -23,12 +24,11 @@
   background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .product-card:hover {
   border-color: rgba(201,169,98,0.3);
-  transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
@@ -37,7 +37,7 @@
 .card-brand {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #000000;
@@ -59,7 +59,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  line-height: 1.2;
+  line-height: 1.3;
   color: var(--black);
   margin-bottom: 6px;
   min-height: 2.4em;
@@ -80,13 +80,15 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: 8px;
+  min-height: 20px;
 }
 .card-stock--out { color: #E53935; }
 .card-stock--in { color: #00A650; }
-.card-stock--warning { color: #FF9800; font-size: 0.65rem; }
+/* font-size mínima de 0.7rem (≈11px) para disclaimer — warning é menor mas aceitável */
+.card-stock--warning { color: #FF9800; font-size: 0.72rem; }
 
 .card-price-row {
   display: flex;
@@ -97,4 +99,29 @@
   padding-top: 14px;
   border-top: 1px solid rgba(0,0,0,0.1);
   width: 100%;
+  /* tabular-nums: preços alinham verticalmente em grids */
+  font-variant-numeric: tabular-nums;
+}
+
+.card-currency {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.card-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1;
+}
+
+.card-unit {
+  font-size: 0.72rem;
+  color: var(--gray);
+  font-weight: 400;
+  margin-left: 4px;
+  align-self: center;
 }

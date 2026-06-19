@@ -89,7 +89,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <motion.div
       className="product-card"
       whileHover={{ scale: 1.03, y: -4 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
+      transition={{ duration: 0.2, ease: 'easeOut' }}
     >
       <div className="card-brand">{product.brand}</div>
       <div className="card-img" style={{ contentVisibility: 'auto' }}>
