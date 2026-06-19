@@ -1,5 +1,6 @@
 import type { Product } from '../data/types';
 import './ProductCard.css';
+import { useProductImage } from '../hooks/useProductImage';
 import AmstelLata from '../assets/amstel-lata.jpg';
 import HeinekenLata from '../assets/heineken-lata.jpg';
 import ImperioVerdeLata from '../assets/imperioverde-lata.jpg';
@@ -13,7 +14,6 @@ import Heineken600ml from '../assets/heineken-600ml.jpg';
 import ImperioPuroMalte from '../assets/imperioPuroMalte.jpg';
 import HeinekenLongShot from '../assets/heinekenlong-shot.jpg';
 import ImperioBranca from '../assets/imperioBranca.png';
-import BrahmaLata from '../assets/brahmaLata.jpg';
 import CoronaLong from '../assets/coronaLong.jpg';
 import AmstelUltra from '../assets/amstelUltra.jpg';
 import Bud1L from '../assets/bud1L.png';
@@ -33,135 +33,78 @@ import Monster from '../assets/monster.jpg';
 import Bivolt from '../assets/Bivolt2L.png';
 import BrusselsUltraLata from '../assets/brusselsUltra-lata.jpg';
 
+const imageMap: Record<string, string> = {
+  'Amstel Lata': AmstelLata,
+  'Amstel 1L': Amstel1L,
+  'Amstel 600ml': Amstel600ml,
+  'Amstel Litrinho': AmstelLitrinho,
+  'Amstel Ultra Lata': AmstelUltra,
+  'Brussels Ultra Lata': BrusselsUltraLata,
+  'Budweiser 1L': Bud1L,
+  'Budweiser Lata': BudLata,
+  'Budweiser Zero Lata': BudZeroLata,
+  'Budweiser Long': BudLong,
+  'Budweiser Long Zero': BudLongZero,
+  'Corona Long': CoronaLong,
+  'Heineken Lata': HeinekenLata,
+  'Heineken Lata Zero': HeinekenLata0,
+  'Heineken Long': HeinekenLong,
+  'Heineken Long Zero': HeinekenLong0,
+  'Heineken 600ml': Heineken600ml,
+  'Heineken Long Shot 250ml': HeinekenLongShot,
+  'Império Verde Lata': ImperioVerdeLata,
+  'Império Puro Malte': ImperioPuroMalte,
+  'Império Branca Lata': ImperioBranca,
+  'Império Long Verde': ImperioLong,
+  'Império Helles Long': ImperioLongHelles,
+  'Itaipava Lata': ItaipavaLata,
+  'Itaipava 1L': Itaipava1L,
+  'Original Litrinho': OriginalLitrinho,
+  'Original 600ml': Original600ml,
+  'Baly 2L': Baly,
+  'Red Bull Energy Drink': RedBull,
+  'Monster Energy': Monster,
+  'Bivolt': Bivolt,
+};
+
 interface ProductCardProps {
   product: Product;
 }
 
+const imgProps = {
+  loading: 'lazy' as const,
+  decoding: 'async' as const,
+  style: { width: '100%', height: '100%', objectFit: 'contain' as const },
+  onError: (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.style.display = 'none';
+  },
+};
+
 export function ProductCard({ product }: ProductCardProps) {
-  const imgProps = {
-    loading: 'lazy' as const,
-    decoding: 'async' as const,
-    style: { width: '100%', height: '100%', objectFit: 'contain' as const },
-    onError: (e: React.SyntheticEvent<HTMLImageElement>) => {
-      e.currentTarget.style.display = 'none';
-    }
-  };
-  
+  const apiImage = useProductImage(product.name, product.brand);
+  const img = apiImage ?? imageMap[product.name];
+
   return (
     <div className="product-card">
       <div className="card-brand">{product.brand}</div>
       <div className="card-img" style={{ contentVisibility: 'auto' }}>
-        {product.name === 'Amstel Lata' && (
-          <img src={AmstelLata} alt="Amstel Lata" {...imgProps} />
-        )}
-        {product.name === 'Heineken Lata' && (
-          <img src={HeinekenLata} alt="Heineken Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Império Verde Lata' && (
-          <img src={ImperioVerdeLata} alt="Império Verde Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Amstel 1L' && (
-          <img src={Amstel1L} alt="Amstel 1L" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Amstel 600ml' && (
-          <img src={Amstel600ml} alt="Amstel 600ml" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Amstel Litrinho' && (
-          <img src={AmstelLitrinho} alt="Amstel Litrinho" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Heineken Lata Zero' && (
-          <img src={HeinekenLata0} alt="Heineken Lata Zero" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Heineken Long Zero' && (
-          <img src={HeinekenLong0} alt="Heineken Long Zero" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Heineken Long' && (
-          <img src={HeinekenLong} alt="Heineken Long" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Heineken 600ml' && (
-          <img src={Heineken600ml} alt="Heineken 600ml" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Império Puro Malte' && (
-          <img src={ImperioPuroMalte} alt="Império Puro Malte" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Império Branca Lata' && (
-          <img src={ImperioBranca} alt="Império Branca Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Heineken Long Shot 250ml' && (
-          <img src={HeinekenLongShot} alt="Heineken Long Shot 250ml" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Brahma Lata' && (
-          <img src={BrahmaLata} alt="Brahma Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Corona Long' && (
-          <img src={CoronaLong} alt="Corona Long" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Amstel Ultra Lata' && (
-          <img src={AmstelUltra} alt="Amstel Ultra Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Budweiser 1L' && (
-          <img src={Bud1L} alt="Budweiser 1L" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Budweiser Lata' && (
-          <img src={BudLata} alt="Budweiser Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Budweiser Zero Lata' && (
-          <img src={BudZeroLata} alt="Budweiser Zero Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Budweiser Long' && (
-          <img src={BudLong} alt="Budweiser Long" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Budweiser Long Zero' && (
-          <img src={BudLongZero} alt="Budweiser Long Zero" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Império Long Verde' && (
-          <img src={ImperioLong} alt="Império Long Verde" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Império Helles Long' && (
-          <img src={ImperioLongHelles} alt="Império Helles Long" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Itaipava Lata' && (
-          <img src={ItaipavaLata} alt="Itaipava Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Itaipava 1L' && (
-          <img src={Itaipava1L} alt="Itaipava 1L" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Original Litrinho' && (
-          <img src={OriginalLitrinho} alt="Original Litrinho" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Original 600ml' && (
-          <img src={Original600ml} alt="Original 600ml" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Brussels Ultra Lata' && (
-          <img src={BrusselsUltraLata} alt="Brussels Ultra Lata" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Baly 2L' && (
-          <img src={Baly} alt="Baly 2L" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Red Bull Energy Drink' && (
-          <img src={RedBull} alt="Red Bull Energy Drink" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Monster Energy' && (
-          <img src={Monster} alt="Monster Energy" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {product.name === 'Bivolt' && (
-          <img src={Bivolt} alt="Bivolt" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        )}
-        {!['Amstel Lata', 'Heineken Lata', 'Império Verde Lata', 'Amstel 1L', 'Amstel 600ml', 'Amstel Litrinho', 'Heineken Lata Zero', 'Heineken Long Zero', 'Heineken Long', 'Heineken 600ml', 'Império Puro Malte', 'Império Branca Lata', 'Heineken Long Shot 250ml', 'Brahma Lata', 'Corona Long', 'Amstel Ultra Lata', 'Budweiser 1L', 'Budweiser Lata', 'Budweiser Zero Lata', 'Brussels Ultra Lata', 'Budweiser Long', 'Budweiser Long Zero', 'Império Long Verde', 'Império Helles Long', 'Itaipava Lata', 'Itaipava 1L', 'Original Litrinho', 'Original 600ml', 'Baly 2L', 'Red Bull Energy Drink', 'Monster Energy', 'Bivolt'].includes(product.name) && (
+        {img ? (
+          <img src={img} alt={product.name} {...imgProps} />
+        ) : (
           <svg viewBox="0 0 70 120" width="65" height="110">
-          <defs>
-            <linearGradient id={`grad-${product.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor={getBrandColor(product.brand, 0)} />
-              <stop offset="50%" stopColor={getBrandColor(product.brand, 1)} />
-              <stop offset="100%" stopColor={getBrandColor(product.brand, 2)} />
-            </linearGradient>
-          </defs>
-          <ellipse cx="35" cy="10" rx="26" ry="6" fill="#aaa" />
-          <rect x="9" y="10" width="52" height="96" rx="2" fill={`url(#grad-${product.id})`} />
-          <rect x="9" y="10" width="18" height="96" fill="rgba(255,255,255,0.07)" />
-          <text x="35" y="58" textAnchor="middle" fontFamily="Barlow Condensed,sans-serif" fontWeight="900" fontSize="11" fill="#000000" letterSpacing="1">{product.brand.toUpperCase()}</text>
-          <ellipse cx="35" cy="106" rx="26" ry="6" fill="#888" />
-          <rect x="20" y="4" width="30" height="8" rx="3" fill="#ccc" />
+            <defs>
+              <linearGradient id={`grad-${product.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor={getBrandColor(product.brand, 0)} />
+                <stop offset="50%" stopColor={getBrandColor(product.brand, 1)} />
+                <stop offset="100%" stopColor={getBrandColor(product.brand, 2)} />
+              </linearGradient>
+            </defs>
+            <ellipse cx="35" cy="10" rx="26" ry="6" fill="#aaa" />
+            <rect x="9" y="10" width="52" height="96" rx="2" fill={`url(#grad-${product.id})`} />
+            <rect x="9" y="10" width="18" height="96" fill="rgba(255,255,255,0.07)" />
+            <text x="35" y="58" textAnchor="middle" fontFamily="Barlow Condensed,sans-serif" fontWeight="900" fontSize="11" fill="#000000" letterSpacing="1">{product.brand.toUpperCase()}</text>
+            <ellipse cx="35" cy="106" rx="26" ry="6" fill="#888" />
+            <rect x="20" y="4" width="30" height="8" rx="3" fill="#ccc" />
           </svg>
         )}
       </div>
@@ -195,14 +138,10 @@ function getBrandColor(brand: string, index: number): string {
     'Império': ['#1a4d1a', '#2a7a2a', '#0d300d'],
     'Itaipava': ['#C62828', '#E53935', '#8E0000'],
     'Original': ['#1565C0', '#1976D2', '#0D47A1'],
-    'Coca-Cola': ['#c00000', '#e00000', '#900000'],
-    'Guaraná': ['#e8b800', '#ffcc00', '#c9a800'],
-    'Pepsi': ['#004B93', '#0066cc', '#003366'],
     'Red Bull': ['#E2141B', '#FF0000', '#B00000'],
     'Monster': ['#86E11E', '#ADFF00', '#5C9F00'],
     'Bivolt': ['#000000', '#1a1a1a', '#0d0d0d'],
     'Baly': ['#000000', '#1a1a1a', '#0d0d0d'],
-    'Fanta': ['#ff6600', '#ff8533', '#cc5200'],
   };
   return colors[brand]?.[index] || '#888888';
 }

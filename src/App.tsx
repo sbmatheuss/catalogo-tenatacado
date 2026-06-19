@@ -25,7 +25,7 @@ function App() {
           title="Cervejas"
           subtitle="Catálogo"
           products={beers}
-          count="27 produtos"
+          count={`${beers.length} produto${beers.length !== 1 ? 's' : ''}`}
         />
       )}
       {activeCategory === 'energeticos' && (
@@ -34,7 +34,7 @@ function App() {
           title="Energéticos"
           subtitle="Energia"
           products={energyDrinks}
-          count="4 produtos"
+          count={`${energyDrinks.length} produto${energyDrinks.length !== 1 ? 's' : ''}`}
         />
       )}
       <Footer />

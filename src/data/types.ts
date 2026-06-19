@@ -11,5 +11,5 @@ export interface Product {
 }
 
 export interface EnergyDrink extends Product {
-  brand: 'Red Bull' | 'Monster' | 'Vibran';
+  brand: 'Red Bull' | 'Monster' | 'Bivolt' | 'Baly';
 }

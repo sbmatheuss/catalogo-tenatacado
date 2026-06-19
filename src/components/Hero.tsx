@@ -1,6 +1,10 @@
 import './Hero.css';
+import { beers, energyDrinks } from '../data/products';
 
 export function Hero() {
+  const totalProdutos = beers.length + energyDrinks.length;
+  const totalMarcas = new Set([...beers, ...energyDrinks].map(p => p.brand)).size;
+
   return (
     <section className="hero">
       <div className="hero-bg" aria-hidden="true"></div>
@@ -25,11 +29,11 @@ export function Hero() {
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <div className="stat-num">20+</div>
+            <div className="stat-num">{totalProdutos}</div>
             <div className="stat-label">Produtos</div>
           </div>
           <div className="stat">
-            <div className="stat-num">5</div>
+            <div className="stat-num">{totalMarcas}</div>
             <div className="stat-label">Marcas Premium</div>
           </div>
           <div className="stat">

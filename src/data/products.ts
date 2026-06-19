@@ -110,7 +110,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 11,
+    id: 13,
     brand: 'Heineken',
     name: 'Heineken Lata',
     volume: '350ml — Caixa c/12',
@@ -119,7 +119,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 12,
+    id: 14,
     brand: 'Heineken',
     name: 'Heineken Lata Zero',
     volume: '350ml — Caixa c/12',
@@ -128,7 +128,7 @@ export const beers: Product[] = [
     inStock: false,
   },
   {
-    id: 13,
+    id: 15,
     brand: 'Heineken',
     name: 'Heineken Long',
     volume: '330ml — Caixa c/24',
@@ -137,7 +137,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 14,
+    id: 16,
     brand: 'Heineken',
     name: 'Heineken Long Zero',
     volume: '330ml — Caixa c/24',
@@ -146,7 +146,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 15,
+    id: 17,
     brand: 'Heineken',
     name: 'Heineken 600ml',
     volume: '600ml — Caixa c/24',
@@ -155,7 +155,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 16,
+    id: 18,
     brand: 'Heineken',
     name: 'Heineken Long Shot 250ml',
     volume: 'Long Shot — Caixa c/24',
@@ -164,7 +164,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 17,
+    id: 19,
     brand: 'Império',
     name: 'Império Verde Lata',
     volume: '350ml — Caixa c/12',
@@ -173,7 +173,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 18,
+    id: 20,
     brand: 'Império',
     name: 'Império Puro Malte',
     volume: '350ml Lata — Caixa c/12',
@@ -182,7 +182,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 19,
+    id: 21,
     brand: 'Império',
     name: 'Império Branca Lata',
     volume: '350ml — Caixa c/12',
@@ -191,7 +191,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 20,
+    id: 22,
     brand: 'Império',
     name: 'Império Long Verde',
     volume: 'Long Neck — Caixa c/12',
@@ -200,7 +200,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 21,
+    id: 23,
     brand: 'Império',
     name: 'Império Helles Long',
     volume: 'Long Neck — Caixa c/12',
@@ -209,7 +209,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 22,
+    id: 24,
     brand: 'Itaipava',
     name: 'Itaipava Lata',
     volume: '350ml — Caixa c/12',
@@ -218,7 +218,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 23,
+    id: 25,
     brand: 'Itaipava',
     name: 'Itaipava 1L',
     volume: '1 Litro — Caixa c/12',
@@ -227,7 +227,7 @@ export const beers: Product[] = [
     inStock: false,
   },
   {
-    id: 24,
+    id: 26,
     brand: 'Original',
     name: 'Original Litrinho',
     volume: 'Litrinho — Caixa c/12',
@@ -236,7 +236,7 @@ export const beers: Product[] = [
     inStock: true,
   },
   {
-    id: 25,
+    id: 27,
     brand: 'Original',
     name: 'Original 600ml',
     volume: '600ml — Caixa c/24',
