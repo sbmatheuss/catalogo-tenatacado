@@ -1,206 +1,252 @@
-.slide-cat {
+/* ══════════════════════════════════════════
+   SlideCategoria — DNA editorial da main page
+   Barlow Condensed 900 · cantos retos · barra de acento
+══════════════════════════════════════════ */
+
+.sc {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 52px 40px 90px;
+  padding: 48px 56px 90px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.slide-cat__header {
+/* ── HEADER — idêntico ao section-header da main page ── */
+.sc__header {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 24px;
   flex-shrink: 0;
-  flex-wrap: wrap;
 }
 
-.slide-cat__label {
+.sc__header-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* section-label clone */
+.sc__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sc__eyebrow-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  flex-shrink: 0;
+}
+
+/* section-title clone — tamanho aumentado para kiosk */
+.sc__title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(4.5rem, 10vw, 8rem);
   font-weight: 900;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
 }
 
-.slide-cat__subtitle {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.03em;
-}
-
-.slide-cat__count {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 4px 14px;
-  border-radius: 999px;
-  border: 1px solid;
-}
-
-.slide-cat__divider {
-  height: 3px;
-  border-radius: 2px;
-  opacity: 0.7;
-  margin-bottom: 20px;
-  flex-shrink: 0;
-}
-
-.slide-cat__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 14px;
-  flex: 1;
-  overflow: hidden;
-  align-content: start;
-}
-
-.slide-cat__card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 14px 12px 12px;
+/* section-count clone */
+.sc__count {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  cursor: default;
-  transition: transform 0.18s ease, background 0.18s ease;
-}
-
-.slide-cat__card:hover,
-.slide-cat__card:active {
-  transform: scale(1.04);
-  background: rgba(255, 255, 255, 0.11);
-}
-
-.slide-cat__card--unavailable {
-  opacity: 0.45;
-  filter: grayscale(40%);
-}
-
-.slide-cat__badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-
-.slide-cat__badge--out { background: rgba(229, 57, 53, 0.85); color: #fff; }
-.slide-cat__badge--expiry { background: rgba(255, 152, 0, 0.85); color: #fff; }
-
-.slide-cat__img-wrap {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
   flex-shrink: 0;
+  padding-bottom: 6px;
 }
 
-.slide-cat__img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.slide-cat__info {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.slide-cat__brand {
+.sc__count-num {
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.slide-cat__name {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: clamp(0.85rem, 1.4vw, 1rem);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-}
-
-.slide-cat__volume {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.45);
-  letter-spacing: 0.02em;
-}
-
-.slide-cat__price-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 3px;
-  margin-top: 4px;
-}
-
-.slide-cat__currency {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.slide-cat__price {
-  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.02em;
 }
 
-.slide-cat__unit {
+.sc__count-label {
   font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
-  align-self: flex-end;
-  padding-bottom: 3px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 2px;
 }
 
-@media (max-width: 1024px) {
-  .slide-cat { padding: 52px 24px 90px; }
-  .slide-cat__grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+/* Divisor — gradient do acento para transparente */
+.sc__rule {
+  height: 1px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  opacity: 0.6;
 }
 
-@media (max-width: 768px) {
-  .slide-cat { padding: 52px 16px 96px; }
-  .slide-cat__grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
-  .slide-cat__img-wrap { height: 76px; }
-  .slide-cat__card { padding: 10px 8px 8px; border-radius: 12px; }
+/* ── GRID — 3 colunas × 2 linhas (6 produtos) ── */
+.sc__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
 }
 
-@media (max-width: 480px) {
-  .slide-cat { padding: 52px 10px 100px; }
-  .slide-cat__grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .slide-cat__header { gap: 10px; margin-bottom: 6px; }
+/* ── CARD — estilo seção energéticos: horizontal, barra esquerda, sem border-radius ── */
+.sc__card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sc__card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Barra esquerda de acento — mesmo padrão energy-card::after da main page */
+.sc__card-bar {
+  width: 3px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Imagem */
+.sc__img-wrap {
+  width: 110px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+}
+
+.sc__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Info */
+.sc__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px 20px 16px 8px;
+  justify-content: center;
+  gap: 3px;
+}
+
+.sc__brand {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.sc__name {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sc__volume {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+/* Preço — mesmo estilo Barlow 900 da main page */
+.sc__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin-top: auto;
+}
+
+.sc__currency {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.sc__price {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Estados */
+.sc__card--out {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.sc__badge-out,
+.sc__badge-exp {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  color: #fff;
+}
+
+.sc__badge-out { background: #C62828; }
+.sc__badge-exp { background: #E65100; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .sc { padding: 44px 36px 90px; }
+  .sc__img-wrap { width: 90px; }
+  .sc__info { padding: 12px 14px 12px 6px; }
+}
+
+@media (max-width: 820px) {
+  .sc { padding: 40px 24px 90px; }
+  .sc__grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .sc__title { font-size: clamp(3.5rem, 9vw, 6rem); }
+}
+
+@media (max-width: 520px) {
+  .sc { padding: 40px 14px 96px; }
+  .sc__grid { grid-template-columns: 1fr; }
+  .sc__title { font-size: 3rem; }
 }

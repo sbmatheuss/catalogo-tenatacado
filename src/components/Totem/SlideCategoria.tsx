@@ -34,61 +34,45 @@ import Bivolt from '../../assets/Bivolt2L.png';
 import BrusselsUltraLata from '../../assets/brusselsUltra-lata.jpg';
 
 const IMAGE_MAP: Record<string, string> = {
-  'Amstel Lata': AmstelLata,
-  'Amstel 1L': Amstel1L,
-  'Amstel 600ml': Amstel600ml,
-  'Amstel Litrinho': AmstelLitrinho,
-  'Amstel Ultra Lata': AmstelUltra,
-  'Brussels Ultra Lata': BrusselsUltraLata,
-  'Budweiser 1L': Bud1L,
-  'Budweiser Lata': BudLata,
-  'Budweiser Zero Lata': BudZeroLata,
-  'Budweiser Long': BudLong,
-  'Budweiser Long Zero': BudLongZero,
-  'Corona Long': CoronaLong,
-  'Heineken Lata': HeinekenLata,
-  'Heineken Lata Zero': HeinekenLata0,
-  'Heineken Long': HeinekenLong,
-  'Heineken Long Zero': HeinekenLong0,
-  'Heineken 600ml': Heineken600ml,
-  'Heineken Long Shot 250ml': HeinekenLongShot,
-  'Império Verde Lata': ImperioVerdeLata,
-  'Império Puro Malte': ImperioPuroMalte,
-  'Império Branca Lata': ImperioBranca,
-  'Império Long Verde': ImperioLong,
-  'Império Helles Long': ImperioLongHelles,
-  'Itaipava Lata': ItaipavaLata,
-  'Itaipava 1L': Itaipava1L,
-  'Original Litrinho': OriginalLitrinho,
-  'Original 600ml': Original600ml,
-  'Baly 2L': Baly,
-  'Red Bull Energy Drink': RedBull,
-  'Monster Energy': Monster,
-  'Bivolt': Bivolt,
+  'Amstel Lata': AmstelLata, 'Amstel 1L': Amstel1L, 'Amstel 600ml': Amstel600ml,
+  'Amstel Litrinho': AmstelLitrinho, 'Amstel Ultra Lata': AmstelUltra,
+  'Brussels Ultra Lata': BrusselsUltraLata, 'Budweiser 1L': Bud1L,
+  'Budweiser Lata': BudLata, 'Budweiser Zero Lata': BudZeroLata,
+  'Budweiser Long': BudLong, 'Budweiser Long Zero': BudLongZero,
+  'Corona Long': CoronaLong, 'Heineken Lata': HeinekenLata,
+  'Heineken Lata Zero': HeinekenLata0, 'Heineken Long': HeinekenLong,
+  'Heineken Long Zero': HeinekenLong0, 'Heineken 600ml': Heineken600ml,
+  'Heineken Long Shot 250ml': HeinekenLongShot, 'Império Verde Lata': ImperioVerdeLata,
+  'Império Puro Malte': ImperioPuroMalte, 'Império Branca Lata': ImperioBranca,
+  'Império Long Verde': ImperioLong, 'Império Helles Long': ImperioLongHelles,
+  'Itaipava Lata': ItaipavaLata, 'Itaipava 1L': Itaipava1L,
+  'Original Litrinho': OriginalLitrinho, 'Original 600ml': Original600ml,
+  'Baly 2L': Baly, 'Red Bull Energy Drink': RedBull,
+  'Monster Energy': Monster, 'Bivolt': Bivolt,
 };
 
 function getBrandColor(brand: string): string {
   const colors: Record<string, string> = {
-    Amstel: '#CC0000', Brussels: '#444444', Budweiser: '#E31837',
+    Amstel: '#CC0000', Brussels: '#444', Budweiser: '#E31837',
     Corona: '#4CAF50', Heineken: '#00A650', Império: '#2a7a2a',
     Itaipava: '#E53935', Original: '#1976D2', 'Red Bull': '#E2141B',
-    Monster: '#86E11E', Bivolt: '#444444', Baly: '#555555',
+    Monster: '#86E11E', Bivolt: '#444', Baly: '#555',
   };
-  return colors[brand] ?? '#888888';
+  return colors[brand] ?? '#888';
 }
 
 function PlaceholderSVG({ brand, productId }: { brand: string; productId: number }) {
   const color = getBrandColor(brand);
   return (
-    <svg viewBox="0 0 70 120" width="60" height="100" aria-hidden="true">
+    <svg viewBox="0 0 70 120" width="56" height="96" aria-hidden="true">
       <defs>
-        <linearGradient id={`tc-grad-${productId}`} x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id={`sc-g-${productId}`} x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor={color} stopOpacity="0.8" />
           <stop offset="100%" stopColor={color} />
         </linearGradient>
       </defs>
       <ellipse cx="35" cy="10" rx="26" ry="6" fill="#aaa" />
-      <rect x="9" y="10" width="52" height="96" rx="2" fill={`url(#tc-grad-${productId})`} />
+      <rect x="9" y="10" width="52" height="96" rx="2" fill={`url(#sc-g-${productId})`} />
       <rect x="9" y="10" width="16" height="96" fill="rgba(255,255,255,0.08)" />
       <text x="35" y="60" textAnchor="middle" fontFamily="Barlow Condensed,sans-serif" fontWeight="900" fontSize="10" fill="#fff" letterSpacing="1">
         {brand.toUpperCase().slice(0, 8)}
@@ -108,47 +92,65 @@ interface SlideCategoriaProps {
 }
 
 export function SlideCategoria({ label, subtitle, products, accent, background }: SlideCategoriaProps) {
-  const visible = products.slice(0, 8);
+  const visible = products.slice(0, 6);
 
   return (
-    <div className="slide-cat" style={{ background }}>
-      <header className="slide-cat__header">
-        <div className="slide-cat__label" style={{ color: accent }}>{label.toUpperCase()}</div>
-        {subtitle && <div className="slide-cat__subtitle">{subtitle}</div>}
-        <div className="slide-cat__count" style={{ background: `${accent}22`, borderColor: `${accent}44`, color: accent }}>
-          {products.length} {products.length === 1 ? 'produto' : 'produtos'}
+    <div className="sc" style={{ background }}>
+      {/* Header editorial — mesmo DNA da section-header da página principal */}
+      <header className="sc__header">
+        <div className="sc__header-left">
+          <div className="sc__eyebrow" style={{ color: accent }}>
+            <span className="sc__eyebrow-line" style={{ background: accent }} />
+            {subtitle ?? 'Catálogo Oficial · TEN Atacado'}
+          </div>
+          <h2 className="sc__title">{label.toUpperCase()}</h2>
+        </div>
+        <div className="sc__count">
+          <span className="sc__count-num" style={{ color: accent }}>{products.length}</span>
+          <span className="sc__count-label">PRODUTOS</span>
         </div>
       </header>
 
-      <div className="slide-cat__divider" style={{ background: accent }} />
+      {/* Divider igual ao da main page */}
+      <div className="sc__rule" style={{ background: `linear-gradient(90deg, ${accent}, transparent)` }} />
 
-      <div className="slide-cat__grid">
+      {/* Grid de cards — estilo seção de energéticos da main page */}
+      <div className="sc__grid">
         {visible.map((product) => {
           const imgSrc = IMAGE_MAP[product.name];
-          const outOfStock = product.inStock === false;
+          const unavailable = product.inStock === false;
 
           return (
-            <div key={`${product.id}-${product.name}`} className={`slide-cat__card${outOfStock ? ' slide-cat__card--unavailable' : ''}`}>
-              {outOfStock && <div className="slide-cat__badge slide-cat__badge--out">Indisponível</div>}
-              {product.expiryWarning && <div className="slide-cat__badge slide-cat__badge--expiry">Val. Próxima</div>}
+            <div
+              key={product.id}
+              className={`sc__card${unavailable ? ' sc__card--out' : ''}`}
+              style={{ '--accent': accent } as React.CSSProperties}
+            >
+              {/* barra esquerda colorida — mesmo padrão do energy-card::after */}
+              <div className="sc__card-bar" style={{ background: accent }} />
 
-              <div className="slide-cat__img-wrap">
+              <div className="sc__img-wrap">
                 {imgSrc
-                  ? <img src={imgSrc} alt={product.name} loading="lazy" decoding="async" className="slide-cat__img" />
-                  : <PlaceholderSVG brand={product.brand} productId={product.id} />
-                }
+                  ? <img src={imgSrc} alt={product.name} loading="lazy" decoding="async" className="sc__img" />
+                  : <PlaceholderSVG brand={product.brand} productId={product.id} />}
               </div>
 
-              <div className="slide-cat__info">
-                <div className="slide-cat__brand">{product.brand}</div>
-                <div className="slide-cat__name">{product.name}</div>
-                <div className="slide-cat__volume">{product.volume}</div>
-                <div className="slide-cat__price-row">
-                  <span className="slide-cat__currency">R$</span>
-                  <span className="slide-cat__price" style={{ color: accent }}>{product.price}</span>
-                  <span className="slide-cat__unit">{product.unit}</span>
+              <div className="sc__info">
+                <div className="sc__brand" style={{ color: accent }}>{product.brand.toUpperCase()}</div>
+                <div className="sc__name">{product.name}</div>
+                <div className="sc__volume">{product.volume}{product.unit ? ` · ${product.unit}` : ''}</div>
+                <div className="sc__price-row" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                  <span className="sc__currency">R$</span>
+                  <span className="sc__price" style={{ color: accent }}>{product.price}</span>
                 </div>
               </div>
+
+              {unavailable && (
+                <div className="sc__badge-out">INDISPONÍVEL</div>
+              )}
+              {product.expiryWarning && (
+                <div className="sc__badge-exp">VAL. PRÓXIMA</div>
+              )}
             </div>
           );
         })}
