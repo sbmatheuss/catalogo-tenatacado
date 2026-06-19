@@ -1,0 +1,58 @@
+import type { Product } from './types';
+
+export const aguas: Product[] = [
+  {
+    id: 1,
+    brand: 'Crystal',
+    name: 'Crystal 500ml',
+    volume: '500ml — Fardo c/12',
+    price: 22,
+    unit: '/fardo',
+    inStock: true,
+  },
+  {
+    id: 2,
+    brand: 'Crystal',
+    name: 'Crystal 1,5L',
+    volume: '1,5L — Fardo c/6',
+    price: 20,
+    unit: '/fardo',
+    inStock: true,
+  },
+  {
+    id: 3,
+    brand: 'Bonafont',
+    name: 'Bonafont 500ml',
+    volume: '500ml — Fardo c/12',
+    price: 24,
+    unit: '/fardo',
+    inStock: true,
+  },
+  {
+    id: 4,
+    brand: 'Bonafont',
+    name: 'Bonafont 1,5L',
+    volume: '1,5L — Fardo c/6',
+    price: 22,
+    unit: '/fardo',
+    inStock: false,
+  },
+  {
+    id: 5,
+    brand: 'Indaiá',
+    name: 'Indaiá 500ml',
+    volume: '500ml — Fardo c/12',
+    price: 20,
+    unit: '/fardo',
+    inStock: true,
+  },
+  {
+    id: 6,
+    brand: 'Schweppes',
+    name: 'Água Tônica Schweppes Lata',
+    volume: '350ml — Caixa c/12',
+    price: 38,
+    unit: '/cx',
+    inStock: true,
+  },
+];

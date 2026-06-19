@@ -5,16 +5,26 @@ import { Hero } from './components/Hero';
 import { Novidade } from './components/Novidade';
 import { ProductsSection } from './components/ProductsSection';
 import { Footer } from './components/Footer';
+import { TotemPage } from './pages/TotemPage';
 import { beers, energyDrinks } from './data/products';
 
 type Category = 'cervejas' | 'energeticos';
 
 function App() {
   const [activeCategory, setActiveCategory] = useState<Category>('cervejas');
+  const [showTotem, setShowTotem] = useState(false);
+
+  if (showTotem) {
+    return <TotemPage onExit={() => setShowTotem(false)} />;
+  }
 
   return (
     <>
-      <Header activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
+      <Header
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+        onTotemOpen={() => setShowTotem(true)}
+      />
       <Hero />
       <Novidade />
       <div className="divider"></div>

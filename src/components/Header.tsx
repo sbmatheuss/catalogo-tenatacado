@@ -5,9 +5,10 @@ type Category = 'cervejas' | 'energeticos';
 interface HeaderProps {
   activeCategory: Category;
   onCategoryChange: (category: Category) => void;
+  onTotemOpen: () => void;
 }
 
-export function Header({ activeCategory, onCategoryChange }: HeaderProps) {
+export function Header({ activeCategory, onCategoryChange, onTotemOpen }: HeaderProps) {
   return (
     <header>
       <div className="logo">TEN<span>.</span>atacado</div>
@@ -27,7 +28,12 @@ export function Header({ activeCategory, onCategoryChange }: HeaderProps) {
         >
           Energéticos
         </button>
-
+        <button
+          className="filter-btn totem-btn"
+          onClick={onTotemOpen}
+        >
+          📺 Vitrine
+        </button>
       </div>
     </header>
   );

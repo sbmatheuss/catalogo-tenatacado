@@ -1,0 +1,58 @@
+import type { Product } from './types';
+
+export const skolBeats: Product[] = [
+  {
+    id: 1,
+    brand: 'Skol Beats',
+    name: 'Skol Beats Senses',
+    volume: '269ml — Caixa c/24',
+    price: 96,
+    unit: '/cx',
+    inStock: true,
+  },
+  {
+    id: 2,
+    brand: 'Skol Beats',
+    name: 'Skol Beats Fresh',
+    volume: '269ml — Caixa c/24',
+    price: 96,
+    unit: '/cx',
+    inStock: true,
+  },
+  {
+    id: 3,
+    brand: 'Skol Beats',
+    name: 'Skol Beats Limão',
+    volume: '269ml — Caixa c/24',
+    price: 96,
+    unit: '/cx',
+    inStock: true,
+  },
+  {
+    id: 4,
+    brand: 'Skol Beats',
+    name: 'Skol Beats Extra Strong',
+    volume: '269ml — Caixa c/24',
+    price: 108,
+    unit: '/cx',
+    inStock: false,
+  },
+  {
+    id: 5,
+    brand: 'Skol Beats',
+    name: 'Skol Beats Groove',
+    volume: '269ml — Caixa c/24',
+    price: 96,
+    unit: '/cx',
+    inStock: true,
+  },
+  {
+    id: 6,
+    brand: 'Skol Beats',
+    name: 'Skol Beats Gin Tônica',
+    volume: '269ml — Caixa c/24',
+    price: 108,
+    unit: '/cx',
+    inStock: true,
+  },
+];

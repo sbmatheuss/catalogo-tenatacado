@@ -1,6 +1,5 @@
 import type { Product } from '../data/types';
 import './ProductCard.css';
-import { useProductImage } from '../hooks/useProductImage';
 import AmstelLata from '../assets/amstel-lata.jpg';
 import HeinekenLata from '../assets/heineken-lata.jpg';
 import ImperioVerdeLata from '../assets/imperioverde-lata.jpg';
@@ -81,8 +80,7 @@ const imgProps = {
 };
 
 export function ProductCard({ product }: ProductCardProps) {
-  const apiImage = useProductImage(product.name, product.brand);
-  const img = apiImage ?? imageMap[product.name];
+  const img = imageMap[product.name];
 
   return (
     <div className="product-card">

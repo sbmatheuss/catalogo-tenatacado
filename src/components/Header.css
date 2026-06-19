@@ -90,6 +90,17 @@ nav a:hover {
   color: #000000;
 }
 
+.filter-btn.totem-btn {
+  border-color: rgba(201, 169, 98, 0.5);
+  color: #C9A962;
+}
+
+.filter-btn.totem-btn:hover {
+  background: rgba(201, 169, 98, 0.15);
+  border-color: #C9A962;
+  color: #C9A962;
+}
+
 @media (max-width: 900px) {
   header {
     padding: 0 16px;
